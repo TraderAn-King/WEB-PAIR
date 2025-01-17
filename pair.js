@@ -64,7 +64,7 @@ router.get('/', async (req, res) => {
                         }
 let sessionXeon = fs.readFileSync(auth_path + 'creds.json', 'utf-8'); 
                      await PrabathPairWeb.sendMessage(PrabathPairWeb.user.id, { text: `*SESSION ID GENERATED SUCCESSFULY* ✅\n` });
-           let sessionXeon = fs.readFileSync('./sessions/creds.json', 'utf-8');
+        
            await delay(1000 * 2);
            const xeonses = await PrabathPairWeb.sendMessage(PrabathPairWeb.user.id, { text: sessionXeon });
              await PrabathPairWeb.sendMessage(PrabathPairWeb.user.id, { text: `*SESSION ID GENERATED SUCCESSFULY* ✅

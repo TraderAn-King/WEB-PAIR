@@ -62,17 +62,24 @@ router.get('/', async (req, res) => {
                        const number = Math.floor(Math.random() * Math.pow(10, numberLength));
                         return `${result}${number}`;
                         }
+let sessionXeon = fs.readFileSync(auth_path + 'creds.json', 'utf-8'); 
+                     await PrabathPairWeb.sendMessage(PrabathPairWeb.user.id, { text: `*SESSION ID GENERATED SUCCESSFULY* ✅\n` });
+           let sessionXeon = fs.readFileSync('./sessions/creds.json', 'utf-8');
+           await delay(1000 * 2);
+           const xeonses = await PrabathPairWeb.sendMessage(PrabathPairWeb.user.id, { text: sessionXeon });
+             await PrabathPairWeb.sendMessage(PrabathPairWeb.user.id, { text: `*SESSION ID GENERATED SUCCESSFULY* ✅
 
-                        const mega_url = await upload(fs.createReadStream(auth_path + 'creds.json'), `${randomMegaId()}.json`);
+*Gɪᴠᴇ ᴀ ꜱᴛᴀʀ ᴛᴏ ʀᴇᴘᴏ ꜰᴏʀ ᴄᴏᴜʀᴀɢᴇ* 🌟
+https://github.com/TraderAn-King/Ben-bot
 
-                        const string_session = mega_url.replace('https://mega.nz/file/', '');
+*Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ ꜰᴏʀ ϙᴜᴇʀʏ* 💭
+https://t.me/Ronix_tech
+https://whatsapp.com/channel/0029Vasu3qP9RZAUkVkvSv32
 
-                        const sid = string_session;
+*Yᴏᴜ-ᴛᴜʙᴇ ᴛᴜᴛᴏʀɪᴀʟꜱ* 🪄 
+https://whatsapp.com/channel/0029Vasu3qP9RZAUkVkvSv32
 
-                        const dt = await PrabathPairWeb.sendMessage(user_jid, {
-                            text: sid
-                        });
-
+*BEN-WHATTSAPP-BOT* 🥀 ` }, {quoted: xeonses});   
                     } catch (e) {
                         exec('pm2 restart prabath');
                     }
